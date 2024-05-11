@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  overflow-x: hidden;
+}
+#main nav {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  padding: 10px 30px;
+  z-index: 50;
+}
+#main nav .links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+#main nav .links h3 {
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+#main nav i {
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+nav img {
+  width: 46px;
+  cursor: pointer;
+}
+
+#page1 {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #d2f6f3;
+  padding-inline: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+#hamMenu {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  position: relative;
+  cursor: pointer;
+}
+#hamMenu .linesContainer {
+
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+#hamMenu .linesContainer .line3,
+#hamMenu .linesContainer .line1 ,
+#hamMenu .linesContainer .line2 {
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#hamMenu .linesContainer .line3{
+ transform: translate(-50%,5px);
+}
+#hamMenu .linesContainer .line1{
+  transform: translate(-50%,-7px);
+}
+.active div.line1{
+
+  transform: translate(-50%, -50%) rotate( 45deg);
+}
+.active div.line3{
+  /* translate: -50% -50%;
+  rotate: 45deg; */
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+/* .active .line2{
+  opacity: 0;
+} */
+
+
+#page1 .circle {
+  border-radius: 50%;
+  width: 480px;
+  height: 480px;
+  position: absolute;
+  left: 50%;
+  top: 14%;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, #fff 20%, #a2f3eb 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10px;
+}
+
+.exploreMore {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+}
+.exploreMore h4 {
+  font-weight: 590;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.exploreMore h5 {
+  font-weight: 500;
+  color: #959494;
+  font-size: 12px;
+}
+.centerBottles {
+  display: flex;
+  position: absolute;
+  align-items: flex-end;
+  justify-content: center;
+  left: 50%;
+  bottom: -29.2%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.centerBottles #orange {
+  width: 580px;
+  user-select: none;
+}
+
+.centerBottles #green {
+  width: 480px;
+  transform: translateX(82%);
+  user-select: none;
+}
+
+.centerBottles #red {
+  width: 480px;
+  transform: translateX(-82%);
+  user-select: none;
+}
+
+.circle h3 {
+  font-weight: 800;
+  font-size: 23px;
+  color: black;
+}
+.circle h4 {
+  font-weight: 500;
+  font-size: 14px;
+  color: #a9a9a9;
+}
+.energy {
+    position: relative;
+  width: fit-content;
+  /* background-color: black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  margin-bottom: 9px;
+}
+
+.energyIcon {
+    width: 69px;
+    height: 69px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, transparent 40%, orange);
+    position: relative;
+    
+    transition: transform 0.5s linear, background-color 1s linear;
+    transform: rotate(0deg);
+    animation-name: animation;
+    animation-duration: .65s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: -1;
+  }
+  @keyframes animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    
+    100% {
+      transform: rotate(360deg);
+      
+    }
+  }
+  .energyIcon::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border-radius: 50%;
+    background: white;
+    z-index: 100;
+  }
+
+.energy img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+#page1 #orangeFruit{
+    position: absolute;
+    right: 5%;
+    top: 35%;
+    width: 80px;
+    transform: rotate(-30deg);
+    filter: blur(2px);
+}
+#page1 #grapes{
+    position: absolute;
+    width: 100px;    
+    top: 55%;
+    left: 6%;
+    transform: rotate(-40deg);
+    filter: blur(2.1px);
+}
+#page1 #slice{
+    position: absolute;
+    width: 100px;
+    bottom: 10%;
+    left: 15%;
+    transform: rotate(40deg);
+    filter: blur(1.5px);
+}
+#page1 #strawberry{
+    position: absolute;
+    left: 18%;
+    top: 28%;
+   scale: .8;
+    width: 150px;
+    filter: blur(1.6px);
+}
+#page1 #kiwi{
+    position: absolute;
+    width: 100px;
+    top: 15%;
+    right: 16%;
+    transform: rotate(40deg);
+    filter: blur(1.8px);
+}
+#page1 #cherry{
+    position: absolute;
+    width: 310px;
+    top: 50%;
+    right: 8%;
+    transform: rotate(-50deg);
+    filter: blur(1.9px);
+}   
+
+#page1 #leaf1{
+    position: absolute;
+    width: 350px;
+    bottom: -8%;
+    right: 0;
+    filter: blur(1.8px);
+}
+#page1 #leaf2{
+    position: absolute;
+    width: 340px;
+    top: 10%;
+    left: -8%;
+    transform: rotate(40deg);
+    filter: blur(1.8px);
+}
+#page1 #redJuice{
+    position: absolute;
+    width: 200px;
+    bottom: -10%;
+    right: 26%;
+    transform: rotate(30deg);
+}
+#page1 #greenJuice{
+    position: absolute;
+    width: 200px;
+    bottom: 0%;
+    left: 27%;
+    transform: rotate(-9deg);
+}
+
+#page2{
+    width: 100%;
+    min-height:100vh ;
+    background-color: #a2f3eb;
+}
