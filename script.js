@@ -72,14 +72,22 @@ tl.from("#leaf2",{
 })
 
 
-let hamburger = document.querySelector("#hamMenu");
+let hamMenu = document.querySelector("#hamMenu");
+let hamMenuLineCont = document.querySelector(".linesContainer");
+let open = false;
+hamMenu.addEventListener("click",()=>{
+    hamMenuLineCont.classList.toggle("close");
+    if(!open){
+        hamMenu.style.clipPath = "circle(120.5% at 85% 15%)";
+        hamMenu.style.backgroundColor = "white";
+    }
+    else{
+        
+        hamMenu.style.clipPath = "circle(5.7% at 88% 8%)"
+        hamMenu.style.backgroundColor = "transparent";
+    }
+    open = !open    
+    
+})
 
-hamburger.addEventListener("click", () => {
-
-   
-
-
- 
-    hamburger.classList.toggle("active");
-});
 
