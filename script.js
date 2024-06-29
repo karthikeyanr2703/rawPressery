@@ -1,3 +1,4 @@
+gsap.registerPlugin(ScrollTrigger);
 const tl = gsap.timeline({
    
 })
@@ -69,7 +70,7 @@ tl.from("#leaf2",{
     duration:".5",
     opacity:0,
 
-})
+},"hi")
 
 
 let hamMenu = document.querySelector("#hamMenu");
@@ -89,5 +90,3 @@ hamMenu.addEventListener("click",()=>{
     open = !open    
     
 })
-
-
