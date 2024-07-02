@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Seymour+One&display=swap");
 * {
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -63,8 +64,10 @@ nav img {
   gap: 10px;
 }
 
+#page1 i{
+  cursor: pointer;
+}
 #hamMenu {
- 
   width: 250px;
   height: 350px;
   background-color: transparent;
@@ -411,6 +414,11 @@ nav img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.5s ease;
+  cursor: pointer;
+}
+.bottomRight .point .circleLogo:hover {
+  background-color: rgb(255, 24, 24);
 }
 
 .bottomRight .point .circleLogo img {
@@ -452,12 +460,11 @@ nav img {
   color: black;
   margin-top: 5px;
   cursor: pointer;
-  transition: background 0.2s linear,color 0.2s linear;
+  transition: background 0.2s linear, color 0.2s linear;
 }
 .bottomPart .bottomLeft button:hover {
-  background-color: rgb(255, 82, 82);
-  color: white;
-
+  background-color: rgb(232, 0, 0);
+  color: rgb(254, 252, 252);
 }
 #page3 {
   width: 100%;
@@ -466,15 +473,16 @@ nav img {
   display: flex;
   z-index: 1;
   overflow: hidden;
+  
 }
 #svgBg {
   position: absolute;
-  width: 550px;
-  height: 550px;
+  width: 600px;
+  height: 600px;
   object-fit: cover;
   object-fit: cover;
   left: 17%;
-  top: 12%;
+  top: 5%;
   filter: blur(0.9px);
   mask-image: url("./images/yellow.svg");
   mask-size: cover;
@@ -571,20 +579,39 @@ nav img {
 }
 .detailsAboutPro h4 {
   color: gray;
+  font-size: 28px;
+
 }
 
 .detailsAboutPro h3 {
-  font-size: 50px;
+  font-size: 35px;
+  margin-top: 14px;
+  font-weight: 800 ;
 }
 
 .detailsAboutPro h1 {
-  text-transform: capitalize;
-  letter-spacing: 2px;
+  
+ 
   font-family: "Montserrat Alternates", sans-serif;
   color: transparent;
   -webkit-text-stroke-width: 2.8px;
   -webkit-text-stroke-color: rgb(255, 136, 0);
   font-size: 105px;
+  transition: all 0.2s linear;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.detailsAboutPro h1 div.letter{
+  
+
+  letter-spacing: 1px;
+  display: inline-block;
+  font-family: "Montserrat Alternates", sans-serif;
+  color: transparent;
+  -webkit-text-stroke-width: 2.8px;
+  -webkit-text-stroke-color: rgb(255, 136, 0);
+  font-size: 110px;
+  transform: translateY(300px);
+
 }
 .detailsAboutPro #btnPage3 {
   padding: 11px 20px;
@@ -595,6 +622,16 @@ nav img {
   outline: 0;
   cursor: pointer;
   border-radius: 50px;
+  position: relative;
+  z-index: 30000;
+  transition: background 0.1s linear, transform 0.1s ease-out;
+}
+
+.detailsAboutPro #btnPage3:hover {
+  background-color: #353535;
+  color: #f1c21b;
+  transform: scaleX(1.05) scaleY(0.95);
+
 }
 .selectionCont {
   width: 20%;
@@ -633,7 +670,7 @@ nav img {
 }
 #page4 {
   width: 100%;
- 
+
   min-height: 100vh;
   background-color: #f5f5ed;
 }
@@ -644,7 +681,7 @@ nav img {
 .productBuy {
   height: 420px;
   background: linear-gradient(to bottom, #f5f5ed, orange 50%, #f5f5ed);
-
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -660,7 +697,6 @@ nav img {
   flex-direction: column;
 }
 .productBuy.pink {
- 
   height: 420px;
   background: linear-gradient(
     to bottom,
@@ -752,8 +788,14 @@ nav img {
   height: fit-content;
   padding: 10px 15px;
   border-radius: 20px;
-  background-color: rgb(255, 55, 0);
+  background-color: #FF4D00;
   color: white;
+  transition: all 0.2s ease;
+}
+.price:hover{
+  background-color: rgb(209, 47, 2);
+  color: rgb(255, 252, 252);
+
 }
 .productBuy.green .price {
   width: fit-content;
@@ -762,6 +804,11 @@ nav img {
   border-radius: 20px;
   background-color: hsl(146, 100%, 56%);
   color: white;
+  transition: all 0.2s ease;
+}
+.productBuy.green .price:hover{
+  background-color: hsl(146, 99%, 46%);
+  color: rgb(255, 252, 252);
 }
 .productBuy.pink .price {
   width: fit-content;
@@ -769,6 +816,11 @@ nav img {
   padding: 10px 15px;
   border-radius: 20px;
   background-color: #ff515a;
+  transition: all 0.2s ease;
+}
+.productBuy.pink .price:hover{
+  background-color: #ff343e;
+  color: rgb(255, 252, 252);
 }
 .buy {
   display: flex;
@@ -812,7 +864,283 @@ nav img {
   flex-direction: column;
   gap: 20px;
 }
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Poppins", sans-serif;
+    list-style-type: none;
+}
 
+body
+{
+    width: 100%;
+    height: 100vh;
+}
+
+/* footer top */
+.footer-top
+{
+    width: 100%;
+    height: 90vh;
+    background-color: rgb(248, 217, 63);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15% 6%;
+    align-items: center;
+    gap: 20px;
+}
+.footer-top .image
+{
+    width: 380px;
+    height:300px;
+    
+}
+
+.image img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    pointer-events: none;
+}
+.footer-top .content
+{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  
+}
+
+.content .fav ul li
+{
+    padding: 10px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.content .fav h3 
+{
+    position: relative;
+}
+.content .fav h3::before
+{
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 2px;
+    background-color:white;
+    bottom:-2px;
+    border-radius: 50%;
+}
+
+.content .support ul li
+{
+    padding: 10px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.content  ul li:hover
+{
+    transform: translateX(5px);
+}
+.content .support h3 
+{
+    position: relative;
+    
+}
+.content .support h3::before
+{
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 2px;
+    background-color:white;
+    bottom:-2px;
+    border-radius: 50%;
+}
+
+.content .contact .contact-top
+{
+    padding-bottom: 13px;
+}
+.contact .contact-top h3
+{
+    padding-bottom: 10px;
+    text-transform: capitalize;
+}
+.contact .contact-top p
+{
+    padding-bottom: 8px;
+    
+}
+.contact .contact-top p i
+{
+    padding-right: 5px;
+}
+.contact .contact-top p  .fa-phone
+{
+    color: rgb(241, 39, 39);
+}
+.contact .contact-top p  .fa-whatsapp
+{
+    color: rgb(53, 255, 26);
+}
+
+.contact .contact-bottom h3
+{
+    padding-bottom: 6px;
+    text-transform: capitalize;
+}
+
+.contact .contact-bottom p
+{
+   line-height: 25px;
+}
+
+.content .social h3
+{
+    position: relative;
+}
+
+.content .social h3::before
+{
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 2px;
+    background-color:white;
+    bottom:-2px;
+    border-radius: 50%;
+}
+
+.content .social .links
+{
+    padding-top: 20px;
+}
+
+.content .social .links i
+{
+    padding:3px;
+    font-size: 19px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.content .social .links i:hover
+{
+    transform: translateY(-3px);
+}
+
+.content .social .links .fa-facebook
+{
+    color: blue;
+}
+.content .social .links .fa-twitter
+{
+    color: #1DA1F2;
+}
+.content .social .links .fa-instagram
+{
+    color: #d62976;
+}
+
+/* footer bottom */
+.footer-bottom
+{
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(196, 180, 180);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.footer-bottom p a
+{
+    text-decoration:none ;
+    color: #e31371;
+}
+.testimonial{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container
+{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+
+.card 
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+.card:nth-child(even)
+{
+    flex-direction: column-reverse;
+}
+
+.card .image-box
+{
+    width: 250px;
+    height: 250px;
+    position: relative;
+}
+.image-box img
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card .content
+{
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+@media (max-width:1000px)
+{
+  
+
+    .container
+    {
+        grid-template-columns: repeat(auto-fit,minmax(100%,1fr));
+        margin: 50px;
+    }
+
+    .card 
+    {
+        flex-direction: row;
+        margin: 10px 0;
+    }
+    .card:nth-child(even)
+    {
+        flex-direction: row-reverse;
+    }
+
+    .card .image-box,.content
+    {
+        width: 50%;
+    }
+
+}
 @media (max-width: 600px) {
   #main nav {
     width: 100vw;
@@ -1125,13 +1453,14 @@ nav img {
   }
   #svgBg {
     position: absolute;
-    width: 330px;
-    height: 390px;
+    width: 400px;
+    height: 400px;
     object-fit: cover;
-    object-fit: cover;
+   
     left: 10%;
     top: 22%;
     filter: blur(0.9px);
+    pointer-events: none;
     mask-image: url("./images/yellow.svg");
     mask-size: cover;
     mask-repeat: no-repeat;
@@ -1195,7 +1524,7 @@ nav img {
     display: flex;
     align-items: center;
     justify-content: center;
-
+pointer-events: none;
     position: relative;
 
     background-color: transparent;
@@ -1204,6 +1533,7 @@ nav img {
   #page3Bottle img {
     position: absolute;
     /* object-fit: cover; */
+    pointer-events: none;
     width: 295px;
     height: 290px;
     left: -85px;
@@ -1237,6 +1567,7 @@ nav img {
 
   .detailsAboutPro h3 {
     font-size: 30px;
+   transform: scale(0.2);
   }
 
   .detailsAboutPro h1 {
@@ -1291,9 +1622,41 @@ nav img {
     right: 0%;
     top: 39%;
   }
+  .footer-top
+  {
+      width: 100%;
+      height:100%;
+      background-color: rgb(248, 217, 63);
+      display: flex;
+      justify-content: space-evenly;
+      padding: 15% 6%;
+      align-items: center;
+      gap: 20px;
+      flex-direction: column;
+  }
+
+  .footer-top .content
+  {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      flex-direction: column;   
+  }
+  .card
+  {
+      flex-direction: column;
+  }
+  .card:nth-child(even)
+  {
+      flex-direction: column;
+  }
+  .card .image-box,.content
+  {
+      width: 100%;
+  }
 }
-@media (min-width: 601px){
-  #hamMenu{
+@media (min-width: 601px) {
+  #hamMenu {
     display: none;
   }
 }
